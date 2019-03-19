@@ -26,14 +26,14 @@ class GameScene extends Phaser.Scene {
         platforms = this.physics.add.staticGroup();
         platforms.create(100, 530, "platforms1");
         platforms.create(250, 430, "platforms1");
-
+    // Create the player here
         player = this.physics.add.sprite(100, 400, "player", 1);
         player.setScale(1.5, 1.5);
         player.maxJump = 1;
         player.jumpCount = 0;
         player.setCollideWorldBounds(true);
         this.physics.add.collider(player, platforms);
-
+    //animations
         this.anims.create({
             key: "walk",
             frames: this.anims.generateFrameNumbers("player", { start: 1, end: 5 }),
